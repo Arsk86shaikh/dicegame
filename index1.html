@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Dicee</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>START NOW</h1>
+
+      <div class="dice">
+        <p class="name">Player 1</p>
+        <img class="img1" src="dice6.png" /> 
+      </div>
+<!-- step2 -->
+      <div class="dice">
+        <p class>Player 2</p>
+        <img class="img2" src="dice6.png" />
+      </div>
+    </div>
+
+    <footer>www 🎲 Devansh Edu-Tech 🎲 com</footer>
+    <script>
+    var name1=prompt("Enter Plyer Name  :")
+    var name2=prompt("Enter Player Name :")
+    var randomNumber1=Math.floor(Math.random()*6)+1;        
+    var randomImagesourec="dice"+randomNumber1+".png"
+    document.querySelectorAll("img")[0].setAttribute("src",randomImagesourec)
+
+   
+    var randomNumber2=Math.floor(Math.random()*6)+1;
+    var randomImagesourec1="dice"+randomNumber2+".png"
+    document.querySelectorAll("img")[1].setAttribute("src",randomImagesourec1)
+
+    
+    if (randomNumber1 > randomNumber2) 
+    {
+      document.querySelector("h1"). innerHTML= "Player 1 wins !"
+    }
+    else if( randomNumber2 > randomNumber1   )
+{
+  document.querySelector("h1"). innerHTML= "Player 2 wins !"
+}
+else{
+  document.querySelector("h1"). innerHTML="Draw! "
+}
+
+    </script>
+  </body>
+</html>

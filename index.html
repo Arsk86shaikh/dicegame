@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Dicee</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="styleshet" href="scss.scss"/>
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster"rel="stylesheet" >
+  </head>
+  <!-- HTML -->
+  <body>
+
+          <div class="container">
+            <div class="pyro">
+              <div class="before"></div>
+              <div class="after"></div>
+            
+      <h1>START NOW</h1>
+     
+      <div class="dice">
+        <p class="name1" >Player 1</p>
+        <img class="img1" src="dice6.png" /> 
+      </div>
+<!-- step2 -->
+      <div class="dice">
+        <p class="name2">Player 2</p>
+        <img class="img2" src="dice6.png" />
+      </div>
+    </div>
+    <button type="button" class="btn btn-primary">Play now</button>
+   
+    <footer>www 🎲 Ar Tech 🎲 com</footer>
+  </div>
+ <!-- javascript -->
+ <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+      
+    
+    var name1=prompt("enter the name:");
+    var name2=prompt("enter the name:");
+
+    
+    document.querySelector(".name1").innerHTML=name1
+    document.querySelector(".name2").innerHTML=name2
+ 
+    document.querySelector("button").addEventListener("click",play)
+         function play(){ 
+    document.querySelector(".name1").innerHTML=name1
+    document.querySelector(".name2").innerHTML=name2
+    var randomNumber1=Math.floor(Math.random()*6)+1;         
+ var randomImagesourec="dice"+randomNumber1+".png"
+ document.querySelectorAll("img")[0].setAttribute("src",randomImagesourec)
+
+    var randomNumber2=Math.floor(Math.random()*6)+1;
+    var randomImagesourec1="dice"+randomNumber2+".png"
+    document.querySelectorAll("img")[1].setAttribute("src",randomImagesourec1)
+
+
+    
+    if (randomNumber1 > randomNumber2) 
+    {
+      document.querySelector("h1"). innerHTML= name1 + "  wins !"
+    }
+    else if( randomNumber2 > randomNumber1   )
+{
+  document.querySelector("h1"). innerHTML= name2+"  wins !"
+}
+else{
+  document.querySelector("h1"). innerHTML=" Draw! "
+}
+}
+
+
+
+    </script>
+   
+  </body>
+</html>
